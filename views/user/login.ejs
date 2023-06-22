@@ -1,0 +1,71 @@
+<section >
+  <div class="container" style="padding-top: 5rem;">
+    <div class="row d-flex justify-content-center border shadow">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-6" >
+        <div class="text-center mb-4 pt-4">
+          <h1>Login</h1>
+         </div>
+        <form action="/login" onsubmit="return submitform(event)" method="post"  id="form" >
+          
+          <div id="error">
+            <% if (error){%>
+             <div  class="alert alert-danger d-flex justify-content-between" role="alert"> <%= error %> 
+            <div class="close text-dark fs-5" style="cursor: pointer;" onclick="hideErrorMsg()">X</div>
+            </div>
+            <% } %>
+          </div>
+              
+     
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label pt-3 pl-3 " for="email"><h5>Email</h5></label>
+            <input type="email" id="email" class="user_class form-control form-control-lg"
+              placeholder="Enter a the email" name="email" />
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label class="form-label pt-3 pl-3 " for="password"> <h5> Password</h5></label>
+            <input type="password" id="password" class="form-control form-control-lg"
+              placeholder="Enter password" name="password" />
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="showpassword" />
+              <label class="form-check-label" for="showpassword">
+               <h5> Show Password</h5>
+              </label>
+            </div>
+           
+          </div>
+
+          <div class="text-center  mt-3 pt-4 pb-4">
+            <button type="submit" class="btn btn-primary btn-lg" 
+              style="padding-left: 2.5rem; padding-right: 2.5rem;" >Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signUp"
+                class="link-danger">Register</a></p>
+                <p class="small fw-bold mt-2 pt-1 mb-0">are you admin? <a href="/admin/login"
+                  class="link-primary">Login</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div
+  class="d-flex  justify-content-center px-4 bg-white" style="padding-top: 7rem;">
+  <!-- Copyright -->
+  <div class="text-black mb-5" >
+    Copyright © 2020. All rights reserved.
+  </div> 
+  </div>
+</footer>
+  <script src="/javascripts/loginValidation.js">
+    
+  </script>
+
